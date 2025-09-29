@@ -33,7 +33,7 @@ def convert_file(
     pad=1,
     parallel=False,
 ):
-    convert_files(
+    return convert_files(
         [input_file_path],
         output_file_path,
         resolution=resolution,
@@ -73,6 +73,7 @@ def convert_files(
         export_xyz(vol, output_file_path, scale, shift)
     elif output_file_extension == ".npy":
         export_npy(vol, output_file_path, scale, shift)
+    return vol
 
 
 def export_pngs(voxels, output_file_path, colors):
